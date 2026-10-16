@@ -1,0 +1,6 @@
+{
+  "name": "Rise to Wellness Ayurvedic Massage Centre",
+  "description": "Premier massage therapy and authentic Ayurvedic wellness centre in Cornerstone NE, Calgary, Alberta. Exclusively for ladies and children.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
