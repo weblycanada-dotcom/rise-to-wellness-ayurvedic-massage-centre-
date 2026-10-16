@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { ArrowLeft, CheckCircle2, ShieldCheck, Phone, Clock, DollarSign, Calendar, Sparkles } from 'lucide-react';
 import { ServiceItem, BUSINESS_INFO, SERVICES } from '../data/wellnessData';
 import { IMAGES } from '../assets/images';
-
+import m11 from '../assets/images/m11.webp';
+import image3 from '../assets/images/images (3).jpg';
 interface ServiceDetailPageProps {
   service: ServiceItem;
   onBack: () => void;
@@ -28,8 +29,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
     serviceCuppingTherapy: IMAGES.serviceCuppingTherapy,
     hotStoneTherapy: IMAGES.hotStoneTherapy,
     shirodharaTherapy: IMAGES.shirodharaTherapy,
-    serviceJanuVasti: IMAGES.serviceJanuVasti,
-    potliHerbalCompress: IMAGES.potliHerbalCompress
+     m11,
+  image3,
   };
 
   const currentImage = imageMap[service.imageKey] || IMAGES.cardMassageTherapy;
