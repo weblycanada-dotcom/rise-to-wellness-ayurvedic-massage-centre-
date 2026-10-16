@@ -32,8 +32,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
     serviceCuppingTherapy: IMAGES.serviceCuppingTherapy,
     hotStoneTherapy: IMAGES.hotStoneTherapy,
     shirodharaTherapy: IMAGES.shirodharaTherapy,
-    serviceJanuVasti: IMAGES.serviceJanuVasti,
-    potliHerbalCompress: IMAGES.potliHerbalCompress
+    
+    m11,
+  image3,
+
   };
 
   // If a specific service is selected, render the simple Service Detail Page
