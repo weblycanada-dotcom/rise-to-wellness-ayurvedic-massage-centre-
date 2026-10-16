@@ -3,6 +3,8 @@ import { Phone, MapPin, Clock } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/wellnessData';
 import { IMAGES } from '../assets/images';
 import { BookingContactForm } from '../components/BookingContactForm';
+import img12 from "../assets/images/m12.jpg";
+import img11 from "../assets/images/kids-1.jpg";
 
 interface HomePageProps {
   onNavigate: (page: string, serviceId?: string) => void;
@@ -250,7 +252,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               {/* Arched Top Image matching reference screenshot */}
               <div className="w-full h-64 rounded-t-[90px] rounded-b-md overflow-hidden bg-stone-100 mb-5">
                 <img
-                  src={IMAGES.potliHerbalCompress}
+                  src={img12}
                   alt="Complimentary Steam Sauna & Towels"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
@@ -296,7 +298,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               {/* Arched Top Image matching reference screenshot */}
               <div className="w-full h-64 rounded-t-[90px] rounded-b-md overflow-hidden bg-stone-100 mb-5">
                 <img
-                  src={IMAGES.hotStoneTherapy}
+                  src={img11}
                   alt="Ladies and Kids Massage"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
