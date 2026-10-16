@@ -42,11 +42,20 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-white border-b border-stone-200/90">
       {/* Main Navigation Bar matching reference screenshot layout with centered logo grid on big screens */}
-      <div className="max-w-7xl 2xl:max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex lg:grid lg:grid-cols-[1fr_auto_1fr] items-center justify-between h-24 w-full">
           
-          {/* Left Nav Links (Desktop) matching reference */}
-          <nav className="hidden lg:flex items-center justify-start gap-6 xl:gap-8 text-[12px] uppercase tracking-[0.14em] font-semibold text-[#333333]">
+          {/* Left Nav Links (Desktop) - Exactly 3 items: HOME, ABOUT US, SERVICES */}
+          <nav className="hidden lg:flex items-center justify-end gap-6 xl:gap-8 text-[12px] uppercase tracking-[0.14em] font-semibold text-[#333333] pr-6 xl:pr-10">
+            <button
+              onClick={() => handleNav('home')}
+              className={`hover:text-[#9c6a46] transition-colors cursor-pointer flex items-center gap-1 ${
+                currentPage === 'home' ? 'text-[#9c6a46] font-bold' : ''
+              }`}
+            >
+              <span>HOME</span>
+            </button>
+
             <button
               onClick={() => handleNav('about')}
               className={`hover:text-[#9c6a46] transition-colors cursor-pointer flex items-center gap-1 ${
@@ -79,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
               {/* Dropdown panel */}
               {servicesDropdownOpen && (
-                <div className="absolute top-full -left-20 w-[580px] bg-white rounded-2xl shadow-2xl border border-stone-200 p-6 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-[580px] max-w-[90vw] bg-white rounded-2xl shadow-2xl border border-stone-200 p-6 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
                   <div className="flex items-center justify-between pb-3 border-b border-stone-100 mb-4">
                     <span className="text-[11px] uppercase tracking-wider font-bold text-stone-500">
                       Our Treatment Offerings (Ladies &amp; Children Only)
@@ -222,7 +231,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </div>
               )}
             </div>
-
           </nav>
 
           {/* Center Official Brand Logo matching wlogo.jpg */}
@@ -238,9 +246,9 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* Right Nav Links & Dark Pill CTA Button matching reference */}
-          <div className="hidden lg:flex items-center justify-end gap-6 xl:gap-8">
-            <nav className="flex items-center gap-7 text-[12px] uppercase tracking-[0.14em] font-semibold text-[#333333]">
+          {/* Right Nav Links & Dark Pill CTA Button - exactly 3 items + BOOK NOW button */}
+          <div className="hidden lg:flex items-center justify-start gap-6 xl:gap-8 pl-6 xl:pl-10">
+            <nav className="flex items-center gap-6 xl:gap-8 text-[12px] uppercase tracking-[0.14em] font-semibold text-[#333333]">
               <button
                 onClick={() => handleNav('faq')}
                 className={`hover:text-[#9c6a46] transition-colors cursor-pointer ${
@@ -269,7 +277,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             <button
               onClick={onOpenBooking}
-              className="px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] text-white bg-[#222f27] hover:bg-[#151e18] transition-all rounded-full shadow-xs cursor-pointer active:scale-95 whitespace-nowrap"
+              className="px-5 xl:px-6 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] text-white bg-[#222f27] hover:bg-[#151e18] transition-all rounded-full shadow-xs cursor-pointer active:scale-95 whitespace-nowrap"
             >
               BOOK NOW
             </button>
@@ -352,12 +360,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 </div>
               )}
             </div>
-            <button
-              onClick={() => handleNav('insurance')}
-              className={`text-left py-2 border-b border-stone-100 ${currentPage === 'insurance' ? 'text-[#9c6a46]' : ''}`}
-            >
-              DIRECT BILLING &amp; INSURANCE
-            </button>
             <button
               onClick={() => handleNav('faq')}
               className={`text-left py-2 border-b border-stone-100 ${currentPage === 'faq' ? 'text-[#9c6a46]' : ''}`}

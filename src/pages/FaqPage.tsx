@@ -165,8 +165,6 @@ export const FaqPage: React.FC<FaqPageProps> = ({
             )}
           </div>
         </div>
-
-        </div>
       </section>
     </div>
   );
