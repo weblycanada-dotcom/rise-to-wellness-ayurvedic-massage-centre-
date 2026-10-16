@@ -4,7 +4,7 @@ import { BUSINESS_INFO } from '../data/wellnessData';
 import { IMAGES } from '../assets/images';
 import { BookingContactForm } from '../components/BookingContactForm';
 import img12 from "../assets/images/m12.jpg";
-import img11 from "../assets/images/kids-1.jpg";
+import img11 from "../assets/images/Kids-1.jpg";
 
 interface HomePageProps {
   onNavigate: (page: string, serviceId?: string) => void;
