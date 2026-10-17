@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Phone } from 'lucide-react';
 import { SERVICES, ServiceItem, BUSINESS_INFO } from '../data/wellnessData';
 import { IMAGES } from '../assets/images';
+import m11 from '../assets/images/m11.webp';
+import image3 from '../assets/images/images (3).jpg';
 import { ServiceDetailPage } from './ServiceDetailPage';
 
 interface ServicesPageProps {
@@ -32,10 +34,10 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
     serviceCuppingTherapy: IMAGES.serviceCuppingTherapy,
     hotStoneTherapy: IMAGES.hotStoneTherapy,
     shirodharaTherapy: IMAGES.shirodharaTherapy,
-    
+    serviceJanuVasti: m11,
+    potliHerbalCompress: image3,
     m11,
-  image3,
-
+    image3,
   };
 
   // If a specific service is selected, render the simple Service Detail Page

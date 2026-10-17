@@ -14,13 +14,6 @@ export const BlogPage: React.FC<BlogPageProps> = ({
   onOpenBooking
 }) => {
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
-  const [activeCategory, setActiveCategory] = useState('All');
-
-  const categories = ['All', 'Mindfulness & Rest', 'Ayurvedic Insights', 'Therapeutic Bodywork', 'Maternal Wellness', 'Family Health'];
-
-  const filteredPosts = activeCategory === 'All'
-    ? BLOG_POSTS
-    : BLOG_POSTS.filter(p => p.category === activeCategory);
 
   const getPostImage = (index: number) => {
     const list = [
@@ -45,7 +38,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-6xl mx-auto px-6 sm:px-8">
           
-          <div className="text-center mb-10">
+          <div className="text-center mb-14">
             <h2
               style={{
                 fontFamily: 'London, sans-serif',
@@ -73,26 +66,9 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             </p>
           </div>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-14">
-            {categories.map((c) => (
-              <button
-                key={c}
-                onClick={() => setActiveCategory(c)}
-                className={`px-4 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-full transition-colors cursor-pointer ${
-                  activeCategory === c
-                    ? 'bg-[#222f27] text-white'
-                    : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
-                }`}
-              >
-                {c}
-              </button>
-            ))}
-          </div>
-
-          {/* Blog Cards Grid matching reference screenshot 1 */}
+          {/* Blog Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredPosts.map((post, index) => (
+            {BLOG_POSTS.map((post, index) => (
               <article
                 key={post.id}
                 className="bg-white border border-stone-200/80 rounded-2xl flex flex-col justify-between overflow-hidden shadow-xs hover:shadow-md transition-shadow"
@@ -161,7 +137,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({
             <div className="bg-[#222f27] text-white p-6 flex items-start justify-between">
               <div>
                 <span className="text-[10px] uppercase tracking-widest text-[#f0c987] font-bold block mb-1">
-                  {selectedPost.category} · {selectedPost.readTime}
+                  {selectedPost.readTime}
                 </span>
                 <h3
                   style={{

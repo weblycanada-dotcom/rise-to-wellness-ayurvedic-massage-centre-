@@ -29,8 +29,10 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
     serviceCuppingTherapy: IMAGES.serviceCuppingTherapy,
     hotStoneTherapy: IMAGES.hotStoneTherapy,
     shirodharaTherapy: IMAGES.shirodharaTherapy,
-     m11,
-  image3,
+    serviceJanuVasti: m11,
+    potliHerbalCompress: image3,
+    m11,
+    image3,
   };
 
   const currentImage = imageMap[service.imageKey] || IMAGES.cardMassageTherapy;
